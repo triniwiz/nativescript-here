@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
+      xmlns:ui="nativescript-here">
+    <StackLayout class="p-20">
+        <ui:Here disableZoom="true" disableScroll="false" latitude="10.1842089" longitude="-61.4576781"/>
+    </StackLayout>
+</Page>
