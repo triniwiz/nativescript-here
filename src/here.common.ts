@@ -8,8 +8,35 @@ export abstract class HereBase extends View {
     disableScroll: boolean;
     zoomLevel: number;
 
-    abstract setCenter(lat: number, lon: number, animated: boolean): void;
-    abstract addMarkers(): void;
+    static mapReadyEvent: string = 'mapReady';
+
+    static mapClickEvent: string = 'mapClick';
+
+    static mapLongClickEvent: string = 'mapLongClick';
+
+    abstract setCenter(lat: number, lon: number, animated: boolean): Promise<any>;
+
+    abstract addMarkers(markers: HereMarker[]): Promise<any>;
+
+    abstract removeMarkers(markers?: number[]): Promise<any>;
+
+    abstract updateMarkers(markers: HereMarker[]): Promise<any>;
+
+    abstract updateMarker(marker: HereMarker): Promise<any>;
+
+    abstract _getMarkersCount(): number;
+}
+
+export interface HereMarker {
+    id: number;
+    latitude: number;
+    longitude: number;
+    title?: string;
+    description?: string;
+    draggable?: boolean;
+    selected?: boolean;
+    onTap?: Function;
+    icon?: string;
 }
 
 export enum HereMapStyle {
@@ -34,15 +61,13 @@ export const mapStyleProperty = new Property<HereBase, HereMapStyle>({
 mapStyleProperty.register(HereBase);
 
 export const latitudeProperty = new Property<HereBase, number>({
-    name: 'latitude',
-    defaultValue: 0
+    name: 'latitude'
 });
 
 latitudeProperty.register(HereBase);
 
 export const longitudeProperty = new Property<HereBase, number>({
-    name: 'longitude',
-    defaultValue: 0
+    name: 'longitude'
 });
 
 longitudeProperty.register(HereBase);

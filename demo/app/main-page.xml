@@ -1,6 +1,9 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
       xmlns:ui="nativescript-here">
-    <StackLayout class="p-20">
-        <ui:Here disableZoom="true" disableScroll="false" latitude="10.1842089" longitude="-61.4576781"/>
-    </StackLayout>
+    <GridLayout rows="auto,auto,auto,*">
+        <Button row="0" text="Remove Markers" tap="removeMarkers"/>
+        <Button row="1" text="Update Marker" tap="updateMarker"/>
+        <Button row="2" text="Go to NewYork" tap="goToNY"/>
+        <ui:Here mapStyle="hybrid_day" loaded="onLoaded" row="3" id="map" zoomLevel="12"  disableZoom="false" disableScroll="false" latitude="10.6689243" longitude="-61.5315486"/>
+    </GridLayout>
 </Page>
