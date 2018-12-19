@@ -3,7 +3,7 @@
     <GridLayout rows="auto,auto,auto,*">
         <Button row="0" text="Remove Markers" tap="removeMarkers"/>
         <Button row="1" text="Update Marker" tap="updateMarker"/>
-        <Button row="2" text="Go to NewYork" tap="goToNY"/>
-        <ui:Here mapStyle="hybrid_day" loaded="onLoaded" row="3" id="map" zoomLevel="12"  disableZoom="false" disableScroll="false" latitude="10.6689243" longitude="-61.5315486"/>
+        <Button row="2" text="Go to New York ✈️" tap="goToNY"/>
+        <ui:Here loaded="onLoaded" row="3" id="map" zoomLevel="12"  disableZoom="false" disableScroll="false" latitude="10.6689243" longitude="-61.5315486"/>
     </GridLayout>
 </Page>
