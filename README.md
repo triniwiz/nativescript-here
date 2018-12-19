@@ -85,8 +85,8 @@ export function onMapReady(event){
 | Property | Default | Description |
 | --- | --- | --- |
 | mapStyle | normal_day |  |
-| latitude | 0 | Set the center of the map by passing this in |
-| longitude | 0 | .. and this as well |
+| latitude | - | Set the center of the map by passing this in |
+| longitude | - | .. and this as well |
 | zoomLevel | 0 |  |
 | mapReady | - | The name of a callback function you can declare to interact with the map after it has been drawn |
 
